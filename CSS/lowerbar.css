@@ -1,0 +1,53 @@
+/* network and show/hide button container */
+#network-container {
+  display: inline-block;
+  position: absolute;
+  top: calc(100vh - 50px);
+  left: 50%;
+  transform: translate(-50%);
+  transition: transform 0.5s;
+}
+
+/* show or hide button */
+#show-hide-network {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -25px) rotate(90deg);
+  background: var(--lightback);
+  transition: transform 0.5s;
+}
+
+#show-hide-network:hover {
+  cursor: pointer;
+}
+
+/* p5js canvas displaying network */
+#defaultCanvas0 {
+  display: block;
+  transform: translateY(-50px);
+}
+
+/* Lower Bar Div */
+#lower-bar {
+  position: absolute;
+  width: 100vw;
+  height: 50px;
+  bottom: 0;
+  background: var(--back);
+  border-top: 4px solid black;
+  box-sizing: content-box;
+}
+
+/* Computer's Choice */
+#comp-choice {
+  position: relative;
+  line-height: 50px;
+  color: var(--darktext);
+  background: var(--lightback);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-family: monospace;
+  font-weight: bold;
+}
