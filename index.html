@@ -15,9 +15,15 @@
   <!-- p5js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js" charset="utf-8"></script>
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
   <!-- Javascript Files -->
   <script src="./JS/neuron.js" charset="utf-8"></script>
   <script src="./JS/network.js" charset="utf-8"></script>
+  <script src="./JS/database.js" charset="utf-8"></script>
+  <script src="./JS/htmlHandling.js" charset="utf-8"></script>
   <script src="./JS/main.js" charset="utf-8"></script>
 
   <!-- CSS -->
@@ -27,51 +33,22 @@
   <link rel="stylesheet" href="./CSS/lowerbar.css">
 
   <meta charset="utf-8">
-  <title>Color Picker | OMahesh</title>
+  <title>Color Picker</title>
+  <link rel="shortcut icon" type="image/ico" href="./Images/favicon.png" />
 
 </head>
 
 <body>
-  <div id="white-text" class="text" contenteditable="true">Edit Me</div>
-  <div id="black-text" class="text" contenteditable="true">Edit Me</div>
+  <div id="white-text" class="text">text</div>
+  <div id="black-text" class="text">text</div>
   <h1 id="question">Which color looks better?</h1>
+  <div id="edit-text" contenteditable="true">Edit Me</div>
+  <span id="comp-choice">Network's choice</span>
   <div id="lower-bar">
-    <span id="comp-choice">computer's choice</span>
   </div>
   <div id="network-container">
     <img id="show-hide-network" src="./Images/Arrow.svg" alt="Arrow">
   </div>
 </body>
-
-<script type="text/javascript">
-  $(function() {
-
-    var showNetwork = false;
-
-    var whiteText = $("#white-text");
-    var blackText = $("#black-text");
-    var networkContainer = $("#network-container");
-    var showHide = $("#show-hide-network");
-
-    whiteText.on('input', () => {
-      blackText.text(whiteText.text()); // set .text() instead .val()
-    });
-    blackText.on('input', () => {
-      whiteText.text(blackText.text()); // set .text() instead .val()
-    });
-
-    networkContainer.on("click", () => {
-      showNetwork = !showNetwork;
-      if (showNetwork) {
-        networkContainer.css("transform", "translate(-50%,-200px)");
-        showHide.css("transform", "translate(-50%, -25px) rotate(90deg) scaleX(-1)");
-      } else {
-        networkContainer.css("transform", "translate(-50%,0)");
-        showHide.css("transform", "translate(-50%, -25px) rotate(90deg)");
-      }
-    });
-
-  });
-</script>
 
 </html>

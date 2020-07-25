@@ -1,12 +1,8 @@
-var n;
+var htmlHandler, database, network;
 
 function setup() {
-  canv = createCanvas(400, 200);
-  canv.parent("#network-container");
+  colorMode(RGB, 1);
+  htmlHandler = new HtmlHandler();
+  database = new Database();
   network = new Network(2);
-}
-
-function draw() {
-  background(238, 226, 223);
-  network.draw();
 }
